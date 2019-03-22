@@ -52,15 +52,15 @@ function setupWorld() {
   floor = new THREE.Mesh(geo, mat);
   floor.rotation.x = -0.5 * Math.PI;
   floor.receiveShadow = true;
-//  scene.add(floor);
+ scene.add(floor);
 
   //Settings for models and material
   var geometry = new THREE.CubeGeometry( 1, 1, 1 );
 
   //geometry.applyMatrix( new THREE.Matrix4().makeTranslation( 0, 0.5, 0 ) );
   var material = new THREE.MeshPhongMaterial({
-  //  overdraw: true,
-    wireframe: true,
+     overdraw: true,
+  //  wireframe: true,
     color: 0xcccccc});
 
   //Geometry to store all buildings of the city
@@ -78,8 +78,7 @@ function setupWorld() {
   //  building.scale.x=10;
   //  building.scale.y=10;
   //  building.scale.z=10;
-  //  building.scale.x  = Math.random() * 50 + 10;
-    building.scale.x  = Math.pow(Math.random(), 2) * 50 + 10;
+   building.scale.x  = Math.random() * 50 + 10;
     building.scale.y  = Math.pow(Math.random(), 3) * building.scale.x * 8 + 8;
     building.scale.z  = building.scale.x;
 
@@ -123,7 +122,7 @@ function draw() {
 function update(delta) {
   controls.update(delta);
   if(controls.object.position.y < floor.position.y + 10){
-    //  controls.object.position.y = 10;
+     controls.object.position.y = 10;
   }
   //console.log(controls);
 }
