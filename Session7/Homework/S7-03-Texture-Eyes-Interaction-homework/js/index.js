@@ -62,25 +62,7 @@ for (a = 0;a<10;a++){
 	 mesh.scale.z=cubescale;
 	 mesh.rotation.x = Math.random() * 2 * Math.PI;
 	 mesh.rotation.y = Math.random() * 2 * Math.PI;
-		//	var randomValue = Math.random()* 5;
-		/*	//Randomize position and scale of the buildings
-			uvs.position.x = ( Math.random() * 0.10 );
-			uvs.position.z = ( Math.random() * 0.2 );
-			uvs.position.y = ( Math.random() * 0.1 - 0.1 );*/
-		/*	group = new THREE.Group();//definite a Group
-
-				for ( var i = 0; i < 1000; i ++ ) {
-					var mesh = new THREE.Mesh( geometry, material );
-					mesh.position.x = Math.random() * 2000 - 1000;
-				  mesh.position.y = Math.random() * 2000 - 1000;
-					mesh.position.z = Math.random() * 2000 - 1000;
-				//	mesh.rotation.x = Math.random() * 2 * Math.PI;
-					//mesh.rotation.y = Math.random() * 2 * Math.PI;
-				//	mesh.matrixAutoUpdate = false;
-
-				//	mesh.updateMatrix();
-					group.add( mesh );
-				}*/
+	
     scene.add( mesh );
 		cubes.push(mesh);
 	}

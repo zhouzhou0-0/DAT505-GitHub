@@ -5,6 +5,7 @@
   <script src="build/OBJLoader.js"></script>
   <script src="build/MTLLoader.js"></script>
 ```
+Load Model
 ```javascript
 var mtlLoader = new THREE.MTLLoader();
 mtlLoader.load("duck.mtl", function(materials){
