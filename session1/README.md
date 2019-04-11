@@ -6,7 +6,10 @@ homework:According to the example given in the class,i added five rotating geome
 ```html
 <script src="js/three.js"></script>
 ```
-This code creates a scene, a camera, and  geometric cubes, and it adds the cube to the scene. It then creates a `WebGL` renderer for the scene and camera, and it adds that viewport to the document.body element. Finally, it animates the cube within the scene for the camera.
+This code creates a scene, a camera, and  geometric cubes, and it adds the cube to the scene.It then creates a `WebGL` renderer for the scene and camera, and it adds that viewport to the document.body element. Finally, it animates the cube within the scene for the camera.
+
+It then sets the position and color.
+
 
 ```html
 var scene, camera, renderer;
@@ -76,11 +79,9 @@ function geometry(){
   scene.add( mesh5 );
 
 }
-
-// Render Loop
-var render = function () {
-  requestAnimationFrame( render );
-
+```
+Adds rotation to geometry
+```html
   mesh1.rotation.x += 0.03; //Continuously rotate the mesh
   mesh1.rotation.y += 0.03;
   mesh2.rotation.y += 0.03; //Continuously rotate the mesh
@@ -91,13 +92,5 @@ var render = function () {
   mesh4.rotation.x += 0.03;
   mesh5.rotation.y += 0.03;
   mesh5.rotation.z += 0.03;
-  renderer.setClearColor("#DC87C9");
 
-  // Render the scene
-  renderer.render(scene, camera);
-};
-
-init();
-geometry();
-render();
 ```
