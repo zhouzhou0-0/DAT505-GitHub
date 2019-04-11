@@ -12,24 +12,31 @@ function init() {
 
 	// Create a geometry
 	// 	Create a box (cube) of 10 width, length, and height
-	geometry = new THREE.BoxGeometry( 10, 10, 10 );
+	geometry = new THREE.BoxGeometry( 5, 5, 5 );
 
-	for (let i=0; i<cubesNum; i++){
-		let randomValue = Math.random() * 0.5;
+	for (var i = 0; i < cubesNum; i++){
+		var randomValue = Math.random() * 0.5;
 		speed.push(randomValue);
 
-		//let randomSelection = Math.round(Math.round()*15) + 1;
+		//Generate a random number from 1 to 4(according to the image files)
+		var randomSelection = Math.round(Math.random()*10)+1;//(random*texturenumber-2)+1;
+		//load a Texture
+		texture = new THREE.TextureLoader().load("textures/texture" + randomSelection +".jpg");
 
 	// Load a texture
-	texture = new THREE.TextureLoader().load( "texture.jpg" );
+//	texture = new THREE.TextureLoader().load( "texture.jpg" );
 
 	// Create a MeshBasicMaterial with a loaded texture
 	material = new THREE.MeshBasicMaterial( { map: texture} );
 
 	// Combine the geometry and material into a mesh
 	mesh = new THREE.Mesh( geometry, material );
+	mesh.position.y = Math.random()*30;
+	//mesh.position.x = 0;
+
 	// Add the mesh to the scene
-	scene.add( mesh );
+  scene.add(mesh);
+  cubes.push(mesh);
 }
 
 	// Create a camera
@@ -55,27 +62,37 @@ function animate() {
 	// 	(thus creating an infinite loop)
 	requestAnimationFrame( animate );
 
+	for (var i=0; i<cubesNum; i++){
+	  cubes[i].rotation.x += 0.02;
+		cubes[i].rotation.y += 0.01;
+		cubes[i].position.y -= 0.1;
+
+ if (cubes[i].position.y< -30){
+		cubes[i].position.y = 35;
+		cubes[i].position.x = (Math.random() * -20)+10;
+		cubes[i].scale.y = (Math.random() * -2)+1;
+		cubes[i].scale.x = (Math.random() * -2)+1;
+		cubes[i].scale.z = (Math.random() * -2)+1;
+
 	// Rotate the x position of the mesh by 0.03
-	//mesh.rotation.x += 0.02;
+/*	mesh.rotation.x += 0.02;
 	// Rotate the y position of the mesh by 0.02
-	//mesh.rotation.y += 0.01;
+	mesh.rotation.y += 0.01;
 
 	//Move the mesh towards the bottom of the screen
-	//mesh.position.y -= 0.2;
-
-	//create a for loop
-	
+	mesh.position.y -= 0.2;*/
 
 	//If the mesh passes the bottom of the screen,
 	//make it appear on the top. Also x position is randomized
-	if (mesh.position.y <- 30){
-		mesh.position.y = 30;
-		mesh.position.x = (Math.random() * -20) +10;
+/*	if (mesh.position.y <- 30){
+		mesh.position.y = 35;
+		mesh.position.x = (Math.random() * -20) +10;*/
 	}
-
+}
 	// Render everything using the created renderer, scene, and camera
 	renderer.render( scene, camera );
 }
+
 
 init();
 animate();
