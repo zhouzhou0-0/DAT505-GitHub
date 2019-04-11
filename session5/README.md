@@ -1,2 +1,1 @@
-# DAT505-GitHub
-# Wenxuan Zhou
+#### DAT505-GitHub ####
