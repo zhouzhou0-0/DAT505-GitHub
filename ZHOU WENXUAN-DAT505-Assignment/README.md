@@ -1,6 +1,6 @@
 ### ZHOU WENXUAN B161006108###
 ### DAT505-Assignment###
-
+This project is to do an immersive interactive experience, exploring the connection between human beings and the universe.
 The aim of the project is to create an abstract universe, with simple geometry showing multiple planets orbiting their stars.At the same time，you can drag the mouse to view if from different angles,which will magnify the effect when the mouse touches the rorating planet.
 
 ### Usage ###
