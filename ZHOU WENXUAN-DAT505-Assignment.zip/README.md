@@ -1,12 +1,14 @@
-### ZHOU WENXUAN(B161006108)DAT505-Assignment###
+### ZHOU WENXUAN B161006108###
+### DAT505-Assignment###
+
 The aim of the project is to create an abstract universe, with simple geometry showing multiple planets orbiting their stars.At the same time，you can drag the mouse to view if from different angles,which will magnify the effect when the mouse touches the rorating planet.
 
 ### Usage ###
 * code js:
-Configuration files. The planet's revolution radius, sphere radius and revolution Angle are defined
+Configuration files. The planet's revolution radius, sphere radius and revolution Angle are defined.
 
 * Contributor.js:
-This code sets the global default variables: screen width, height, default angular speed of planet revolution, zoom speed, etc
+This code sets the global default variables: screen width, height, default angular speed of planet revolution, zoom speed, etc.
 
 * main.js:
 

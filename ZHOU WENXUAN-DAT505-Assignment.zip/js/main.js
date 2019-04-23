@@ -106,7 +106,7 @@ $(document).ready(function () {
         var projector = new THREE.Projector();//声明一个projector
         var vector = new THREE.Vector3(//建立几何体的vertice(顶点)
             (event.clientX / window.innerWidth) * 2 - 1,
-            -(event.clientY / window.innerHeight) * 2 + 1, 
+            -(event.clientY / window.innerHeight) * 2 + 1,
             0.5);
         projector.unprojectVector(vector, camera);//将屏幕上点的位置转换成Three.js场景中的坐标
 
